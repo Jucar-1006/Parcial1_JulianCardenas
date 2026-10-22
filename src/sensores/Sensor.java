@@ -39,8 +39,6 @@ public abstract class Sensor {
         if (cantidadLecturas < ultimasLecturas.length) {
             cantidadLecturas++;}
 
-        // TODO: implementar buffer circular
-        // Pista: usar indiceActual y cantidadLecturas.
     }
 
     /**
