@@ -17,14 +17,14 @@ public class SensorTemperatura extends Sensor {
 
     @Override
     public int generarLectura() {
-        // TODO: generar valor aleatorio en [MIN-5, MAX+5],
-        // llamar a registrarLectura(valor) y retornarlo.
-        return 0;
+        // Rango ampliado [-15, 55] para que a veces caiga fuera de rango
+        int valor = (MIN - 5) + RND.nextInt((MAX + 5) - (MIN - 5) + 1);
+        registrarLectura(valor);
+        return valor;
     }
 
     @Override
     public boolean fueraDeRango(int valor) {
-        // TODO: implementar
-        return false;
+        return valor < MIN || valor > MAX;
     }
 }
