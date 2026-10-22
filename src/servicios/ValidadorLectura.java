@@ -7,7 +7,11 @@ package servicios;
 public class ValidadorLectura {
 
     public boolean esValida(String tipo, int valor) {
-        // TODO: implementar switch por tipo
-        return false;
+        return switch (tipo) {
+            case "TEMPERATURA" -> valor >= -10 && valor <= 50;
+            case "HUMEDAD" -> valor >= 0 && valor <= 100;
+            case "LUMINOSIDAD" -> valor >= 0 && valor <= 2000;
+            default -> false;
+        };
     }
 }
